@@ -1,28 +1,97 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <board :tasks="this.tasks"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Board from './components/board.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Board
+  },
+  data() {
+    return {
+      tasks: {
+        todo: [
+          {
+            title: "hello",
+            description: "hhhhh",
+            created: "31.08",
+            daysAgo: "34",
+            id: 1
+          },
+          {
+            title: "hello",
+            description: "hhhhh",
+            created: "31.08",
+            daysAgo: "34",
+            id: 2
+          },
+          {
+            title: "hello",
+            description: "hhhhh",
+            created: "31.08",
+            daysAgo: "34",
+            id: 3
+          }
+        ],
+        inProgress: [
+          {
+            title: "hello",
+            description: "hhhhh",
+            created: "31.08",
+            daysAgo: "34",
+            id: 1
+          },
+          {
+            title: "hello",
+            description: "hhhhh",
+            created: "31.08",
+            daysAgo: "34",
+            id: 2
+          },
+          {
+            title: "hello",
+            description: "hhhhh",
+            created: "31.08",
+            daysAgo: "34",
+            id: 3
+          }
+        ],
+        done: [
+           {
+            title: "hello",
+            description: "hhhhh",
+            created: "31.08",
+            daysAgo: "34",
+            id: 1
+          },
+          {
+            title: "hello",
+            description: "hhhhh",
+            created: "31.08",
+            daysAgo: "34",
+            id: 2
+          },
+          {
+            title: "hello",
+            description: "hhhhh",
+            created: "31.08",
+            daysAgo: "34",
+            id: 3
+          }
+        ]
+      }
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  *{
+    box-sizing: border-box;
+  }
 </style>
