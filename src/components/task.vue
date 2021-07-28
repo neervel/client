@@ -28,5 +28,22 @@ export default {
 <style scoped>
   .task{
     background: var(--bgColor);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
   }
+  .task__title{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  .task__description{
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .task__created{
+    font-size: 14px;
+    color: rgba(0, 0, 0, .4)
+  }
+
 </style>
