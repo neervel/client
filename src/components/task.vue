@@ -1,5 +1,5 @@
 <template lang="pug">
-  .task
+  .task(:style="cssProps")
     h4.task__title
       | {{task.title}}
     p.task__description
@@ -12,7 +12,21 @@
 export default {
   name: 'Task',
   props: {
-    task: Object
+    task: Object,
+    bgColor: String
+  },
+  computed: {
+    cssProps() {
+      return {
+        '--bgColor': this.bgColor
+      }
+    }
   }
 }
 </script>
+
+<style scoped>
+  .task{
+    background: var(--bgColor);
+  }
+</style>

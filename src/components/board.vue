@@ -1,9 +1,9 @@
 <template lang="pug">
   .section
     .stages
-      Stage(:tasks="tasks.todo", :title="`To do`")
-      Stage(:tasks="tasks.inProgress", :title="`In progress`")
-      Stage(:tasks="tasks.done", :title="`Done`")
+      Stage(:tasks="tasks.todo", :title="`To do`", :bgColor="`#E5EBFF`")
+      Stage(:tasks="tasks.inProgress", :title="`In progress`", :bgColor="`#F6FFD1`")
+      Stage(:tasks="tasks.done", :title="`Done`", :bgColor="`#D1FFD5`" )
 </template>
 
 <script>

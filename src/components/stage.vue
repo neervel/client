@@ -3,7 +3,7 @@
     h2.stage__title
       | {{title}}
     .stage-cards
-      Task(v-for="task in tasks", :task="task", :key="task.id")
+      Task(v-for="task in tasks", :task="task", :key="task.id", :bgColor="bgColor")
     span.stage__total
       | Total: {{tasks.length}}
 </template>
@@ -17,7 +17,8 @@ export default {
   },
   props: {
     tasks: Array,
-    title: String
+    title: String,
+    bgColor: String
   }
 }
 </script>
