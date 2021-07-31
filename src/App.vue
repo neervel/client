@@ -6,6 +6,7 @@
 
 <script>
 import Board from './components/board.vue'
+import taskService from './service/taskService.js'
 
 export default {
   name: 'App',
@@ -85,6 +86,14 @@ export default {
           }
         ]
       }
+    }
+  },
+  mounted() {
+    this.getAll()
+  },
+  methods: {
+    async getAll() {
+      this.tasks.todo = await taskService.getAll()
     }
   }
 }

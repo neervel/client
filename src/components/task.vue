@@ -5,7 +5,7 @@
     p.task__description
       | {{task.description}}
     span.task__created
-      | Created: {{task.created}} ({{task.daysAgo}} days left)
+      | Created: {{task.dateFormat}} ({{task.daysAgo}} days ago)
 </template>
 
 <script>
@@ -16,7 +16,7 @@ export default {
     bgColor: String
   },
   computed: {
-    cssProps() {
+    cssProps () {
       return {
         '--bgColor': this.bgColor
       }
