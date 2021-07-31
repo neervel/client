@@ -4,8 +4,10 @@
       | {{task.title}}
     p.task__description
       | {{task.description}}
-    span.task__created
-      | Created: {{task.dateFormat}} ({{task.daysAgo}} days ago)
+    span.task__created(v-if="task.daysAgo!=0")
+      | Created: {{task.dateFormat}} (days ago: {{task.daysAgo}})
+    span.task__created(v-else)
+      | Created today
 </template>
 
 <script>
