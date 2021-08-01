@@ -16,75 +16,9 @@ export default {
   data() {
     return {
       tasks: {
-        todo: [
-          {
-            title: "hello",
-            description: "hhhhh",
-            created: "31.08",
-            daysAgo: "34",
-            id: 1
-          },
-          {
-            title: "hello",
-            description: "hhhhh",
-            created: "31.08",
-            daysAgo: "34",
-            id: 2
-          },
-          {
-            title: "hello",
-            description: "hhhhh",
-            created: "31.08",
-            daysAgo: "34",
-            id: 3
-          }
-        ],
-        inProgress: [
-          {
-            title: "hello",
-            description: "hhhhh",
-            created: "31.08",
-            daysAgo: "34",
-            id: 1
-          },
-          {
-            title: "hello",
-            description: "hhhhh",
-            created: "31.08",
-            daysAgo: "34",
-            id: 2
-          },
-          {
-            title: "hello",
-            description: "hhhhh",
-            created: "31.08",
-            daysAgo: "34",
-            id: 3
-          }
-        ],
-        done: [
-           {
-            title: "hello",
-            description: "hhhhh",
-            created: "31.08",
-            daysAgo: "34",
-            id: 1
-          },
-          {
-            title: "hello",
-            description: "hhhhh",
-            created: "31.08",
-            daysAgo: "34",
-            id: 2
-          },
-          {
-            title: "hello",
-            description: "hhhhh",
-            created: "31.08",
-            daysAgo: "34",
-            id: 3
-          }
-        ]
+        todo: [],
+        inProgress: [],
+        done: []
       }
     }
   },
