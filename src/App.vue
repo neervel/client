@@ -27,7 +27,16 @@ export default {
   },
   methods: {
     async getAll() {
-      this.tasks.todo = await taskService.getAll()
+      const tasks = await taskService.getAll()
+      tasks.forEach(task => {
+        if (task.status == 'todo') {
+          this.tasks.todo.push(task)
+        } else if (task.status == 'inProgress') {
+          this.tasks.inProgress.push(task)
+        } else if (task.status == 'done') {
+          this.tasks.done.push(task)
+        } 
+      });
     }
   }
 }
