@@ -6,9 +6,9 @@ class taskService {
   async getAll () {
     let tasks
     await axios.get(BASE_URL).then(response => {
-      tasks = response.data.tasks
+      tasks = response.data
     })
-    return tasks 
+    return tasks   
   }
 
   async create(task) {
@@ -16,7 +16,11 @@ class taskService {
   }
 
   async delete(id) {
-    await axios.delete(BASE_URL+id)
+    let deletedTask
+    await axios.delete(BASE_URL+id).then(response => {
+      deletedTask = response.data
+    })
+    return deletedTask
   }
 
   async edit(task) {

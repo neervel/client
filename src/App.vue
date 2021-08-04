@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <board :tasks="this.tasks"/>
+    <board :tasks="this.tasks" :editTask="editTask"/>
   </div>
 </template>
 
@@ -37,6 +37,25 @@ export default {
           this.tasks.done.push(task)
         } 
       });
+    },
+    async editTask (action, id, task) {
+      if (action == "delete") {
+        const deletedTask = await taskService.delete(id)
+        this.tasks[deletedTask.status].forEach((element, i) => {
+          if (element.id == deletedTask.id) {
+            this.tasks[deletedTask.status].splice(i, 1)
+          }
+        }); 
+      } else if (action == "edit") {
+        console.log("edit " + id)
+        if (task) {
+          console.log(task)
+        }
+      } else if (action == "prev") {
+        console.log("prev " + id)
+      } else if (action == "next") {
+        console.log("next " + id)
+      } 
     }
   }
 }

@@ -1,9 +1,9 @@
 <template lang="pug">
   .section
     .stages
-      Stage(:tasks="tasks.todo", :title="`To do`", :bgColor="`#E5EBFF`")
-      Stage(:tasks="tasks.inProgress", :title="`In progress`", :bgColor="`#F6FFD1`")
-      Stage(:tasks="tasks.done", :title="`Done`", :bgColor="`#D1FFD5`" )
+      Stage(:tasks="tasks.todo", :title="`To do`", :bgColor="`#E5EBFF`", :editTask="editTask")
+      Stage(:tasks="tasks.inProgress", :title="`In progress`", :bgColor="`#F6FFD1`", :editTask="editTask")
+      Stage(:tasks="tasks.done", :title="`Done`", :bgColor="`#D1FFD5`", :editTask="editTask" )
 </template>
 
 <script>
@@ -15,7 +15,8 @@ export default {
     Stage
   },
   props: {
-    tasks: Object
+    tasks: Object,
+    editTask: Function
   }
   
 }

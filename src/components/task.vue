@@ -9,19 +9,19 @@
         | Created: {{task.dateFormat}} (days ago: {{task.daysAgo}})
       span.task__created(v-else)
         | Created today
-      .task-actions
-        button.task__prev(@click="prev(task._id)")
-          .button-img
-            img(src="../assets/img/prev.svg")
-        button.task__edit(@click="edit(task._id)")
-          .button-img
-            img(src="../assets/img/edit.svg")
-        button.task__delete(@click="del(task._id)")
-          .button-img
-            img(src="../assets/img/delete.svg")
-        button.task__next(@click="next(task._id)")
-          .button-img
-            img(src="../assets/img/next.svg")
+    .task-actions
+      button.task__prev(@click="prev(task._id)")
+        .button-img
+          img(src="../assets/img/prev.svg")
+      button.task__edit(@click="edit(task._id)")
+        .button-img
+          img(src="../assets/img/edit.svg")
+      button.task__delete(@click="del(task._id)")
+        .button-img
+          img(src="../assets/img/delete.svg")
+      button.task__next(@click="next(task._id)")
+        .button-img
+          img(src="../assets/img/next.svg")
 </template>
 
 <script>
@@ -29,7 +29,8 @@ export default {
   name: 'Task',
   props: {
     task: Object,
-    bgColor: String
+    bgColor: String,
+    editTask: Function
   },
   data() {
     return {
@@ -60,20 +61,16 @@ export default {
       }      
     },
     prev (id) {
-      console.log('prev ' + id)
-      document.getElementsByClassName('task-active')[0].classList.remove('task-active')
+      this.editTask("prev", id)
     },
     edit (id) {
-      console.log('edit ' + id)
-      document.getElementsByClassName('task-active')[0].classList.remove('task-active')
+      this.editTask("edit", id)
     },
     del (id) {
-      console.log('del ' + id)
-      document.getElementsByClassName('task-active')[0].classList.remove('task-active')
+      this.editTask("delete", id)
     },
     next (id) {
-      console.log('next ' + id)
-      document.getElementsByClassName('task-active')[0].classList.remove('task-active')
+      this.editTask("next", id)
     }
   }
 }
@@ -133,6 +130,7 @@ export default {
     align-items: center;
     justify-content: space-between;
     display: none;
+    z-index: 3;
   }
   .task-active .task-actions{
     display: flex;
