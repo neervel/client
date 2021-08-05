@@ -52,9 +52,47 @@ export default {
           console.log(task)
         }
       } else if (action == "prev") {
-        console.log("prev " + id)
+        let checked = false
+        this.tasks.inProgress.forEach((task, i) => {
+          if (task.id == id) {
+            task.status = "todo"
+            this.tasks.todo.push(task)
+            this.tasks.inProgress.splice(i, 1)
+            checked = true
+            taskService.edit(task)
+          }
+        })
+        if (!checked) {
+          this.tasks.done.forEach((task, i) => {
+            if (task.id == id) {
+              task.status = "inProgress"
+              this.tasks.inProgress.push(task)
+              this.tasks.done.splice(i, 1)
+              taskService.edit(task)
+            }
+          })
+        }
       } else if (action == "next") {
-        console.log("next " + id)
+        let checked = false
+        this.tasks.todo.forEach((task, i) => {
+          if (task.id == id) {
+            task.status = "inProgress"
+            this.tasks.inProgress.push(task)
+            this.tasks.todo.splice(i, 1)
+            checked = true
+            taskService.edit(task)
+          }
+        })
+        if (!checked) {
+          this.tasks.inProgress.forEach((task, i) => {
+            if (task.id == id) {
+              task.status = "done"
+              this.tasks.done.push(task)
+              this.tasks.inProgress.splice(i, 1)
+              taskService.edit(task)
+            }
+          })
+        }
       } 
     }
   }
