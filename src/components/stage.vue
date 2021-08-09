@@ -4,7 +4,7 @@
       | {{title}}
     .stage-cards
       Task(v-for="task in tasks", :task="task", :key="task.id", :bgColor="bgColor", :editTask="editTask")
-    .stage__add
+    router-link.stage__add(:to="{name: 'createtask'}")
       | +
     span.stage__total
       | Total: {{tasks.length}}
@@ -76,6 +76,8 @@ export default {
     margin: 0 auto;
     margin-top: 20px;
     position: relative;
+    text-decoration: none;
+    color: rgba(0, 0, 0, .8);
   }
   .stage__add::after{
     position: absolute;

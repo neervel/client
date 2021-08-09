@@ -12,7 +12,11 @@ class taskService {
   }
 
   async create(task) {
-    await axios.post(BASE_URL, task)
+    let createdTask
+    await axios.post(BASE_URL, task).then(response => {
+      createdTask = response.data
+    })
+    return createdTask
   }
 
   async delete(id) {

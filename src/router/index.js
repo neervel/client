@@ -9,22 +9,23 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Kanban',
+    name: 'home',
     component: board
   },
   {
     path: '/create',
-    name: 'Create task',
+    name: 'createtask',
     component: createTask
   },
   {
     path: '/edit',
-    name: 'Edit task',
+    name: 'edittask',
     component: editTask
   }
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

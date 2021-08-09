@@ -1,6 +1,9 @@
 <template lang="pug">
-  h1
-    | edit task
+  .container
+    h1
+      | edit task
+    router-link(:to="{name: 'home'}")
+      | To tasks
 </template>
 
 <script>
