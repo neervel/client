@@ -13,9 +13,10 @@
       button.task__prev(@click="prev(task._id)")
         .button-img
           img(src="../assets/img/prev.svg")
-      button.task__edit(@click="edit(task._id)")
-        .button-img
-          img(src="../assets/img/edit.svg")
+      button.task__edit
+        router-link(:to="{name: 'edittask'}")
+          .button-img
+            img(src="../assets/img/edit.svg")
       button.task__delete(@click="del(task._id)")
         .button-img
           img(src="../assets/img/delete.svg")
@@ -135,7 +136,7 @@ export default {
   .task-active .task-actions{
     display: flex;
   }
-  .task-actions button{
+  .task-actions button, .task-actions .task__edit{
     height: 40px;
     width: 40px;
     border-radius: 50%;
